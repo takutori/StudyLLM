@@ -6,7 +6,9 @@ authors = ["takutori <t.taichi.takutori.0214@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
+transformers = {extras = ["ja", "sentencepiece", "torch"], version = "^4.48.0"}
+ipykernel = "^6.29.5"
 
 
 [build-system]
