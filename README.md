@@ -27,24 +27,21 @@ poetry add "transformers[ja,sentencepiece,torch]"
 
 #### transformersの基本的な使い方
 
+|タスク|モデル|
+|---|---|
+|トークナイザ|`AutoTokenizer.from_pretrained("abeja/gpt2-large-japanese")`|
+|文章生成|`AutoModelForCausalLM.from_pretrained("abeja/gpt2-large-japanese")`|
+
+#### 基本用語
+
 - トークン
   - モデルが使用する基本的な単位
 - トークナイゼーション
   - トークンに分割する処理
 - トークナイザ
   - トークン単位に分割する実装
-
-|タスク|モデル|
-|---|---|
-|トークナイザ|`AutoTokenizer.from_pretrained("abeja/gpt2-large-japanese")`|
-|文章生成|`AutoModelForCausalLM.from_pretrained("abeja/gpt2-large-japanese")`|
-
-#### 分布仮説
-
-- ある単語の意味は周辺に出現する単語によって表せる
-
-#### Word2Vec
-
+- 分布仮説
+  - ある単語の意味は周辺に出現する単語によって表せる
 - 事前学習
   - 実際に解きたいタスクを学習する前に別のタスクでモデルを学習すること
 - 下流タスク
