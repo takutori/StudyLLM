@@ -57,7 +57,11 @@ poetry add "transformers[ja,sentencepiece,torch]"
 - few-shot
   - ファインチューニングせずに、事前学習された大規模言語モデルをプロンプトを通じて制御し下流タスクを解くこと
 
+### Transformer
+
+
+
 ## References
 
-[大規模言語モデル入門](https://amzn.asia/d/2ewzg0r)
-[大規模言語モデル入門Ⅱ〜生成型LLMの実装と評価](https://amzn.asia/d/coRwOc8)
+- [大規模言語モデル入門](https://amzn.asia/d/2ewzg0r)
+- [大規模言語モデル入門Ⅱ〜生成型LLMの実装と評価](https://amzn.asia/d/coRwOc8)
