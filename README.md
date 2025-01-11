@@ -39,6 +39,20 @@ poetry add "transformers[ja,sentencepiece,torch]"
 |トークナイザ|`AutoTokenizer.from_pretrained("abeja/gpt2-large-japanese")`|
 |文章生成|`AutoModelForCausalLM.from_pretrained("abeja/gpt2-large-japanese")`|
 
+#### 分布仮説
+
+- ある単語の意味は周辺に出現する単語によって表せる
+
+#### Word2Vec
+
+- 事前学習
+  - 実際に解きたいタスクを学習する前に別のタスクでモデルを学習すること
+- 下流タスク
+  - 事前学習したモデルを適用する先のタスク、実際に解きたいタスク
+- 転移学習
+  - 解きたいタスクを別のタスクで学習したモデルで解くこと
+- 自己教師あり学習
+  - 入力から自動的に予測するラベルを生成して学習する
 
 ## References
 
