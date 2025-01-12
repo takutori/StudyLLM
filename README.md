@@ -57,9 +57,28 @@ poetry add "transformers[ja,sentencepiece,torch]"
 - few-shot
   - ファインチューニングせずに、事前学習された大規模言語モデルをプロンプトを通じて制御し下流タスクを解くこと
 
-### Transformer
+### Language Moddel
 
+|モデル名|モデル|概要|
+|---|---|---|
+|GPT2|`abeja/gpt2-large-japanese`|Transformerで次トークンの確率を予測。事前学習とfine turningの目的関数を和にして一度に学習すると性能向上。|
+|BERT|`cl-tohoku/bert-base-japanese-v3`|マスク言語モデリング＋次文予測の二つのタスクで事前学習。|
+|RoBERTa|`FacebookAI/roberta-base`|マスク言語モデリングは寄与しなかったので、次文予測のタスクのみで事前学習。|
+|SpanBERT||マスク言語モデリングの穴埋めをトークン単位ではなく、連続したトークン単位（スパン単位）に変更|
+|DeBERTa|`"microsoft/deberta-v3-base"`|kaggleでよく使われるらしい|
+|T5|`retrieva-jp/t5-large-long`|"感情分析:この映画は面白い"のようにタスクを接頭語に入れるtext-to-text形式。|
+|multilingual BERT||BERTの多言語ver|
+|XLM-RoBERTa||RoBERTaの多言語ver|
+|mT5||T5の多言語ver|
 
+### トークナイぜーション
+
+|手法|解説|
+|---|---|
+|バイト対符号化|一文字ずつからだんだん隣り合う言葉同士を結合するイメージ<br>1.一文字ずつに分ける<br>2.隣接した回数が多いものを探す<br>3.探したものを組みにして語彙に追加<br>4.2,3を繰り返す|
+|WordPiece|基本はバイト対符号化と同じだが、隣り合う頻度ではなく、結合前のワードの頻度も加味したスコアで実施する|
+
+日本語は、形態素解析などで単語に分割してからこれらを使うことが多い。
 
 ## References
 
